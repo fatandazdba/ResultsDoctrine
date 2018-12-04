@@ -1,0 +1,5 @@
+creo la base de phpMyAdmin
+creo el usuario desde phpMyAdmin
+
+Asigno permisos a del usuario a la base de datos
+GRANT ALL privileges ON miw_results.* TO 'miw'@localhost
