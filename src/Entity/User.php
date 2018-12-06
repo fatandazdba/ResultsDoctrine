@@ -100,7 +100,7 @@ class User implements \JsonSerializable
      *     name     = "admin",
      *     type     = "boolean",
      *     nullable = true,
-     *     options  = { "default" = false }
+     *     options  = { "default" = 0 }
      *     )
      */
     private $isAdmin;
@@ -191,6 +191,38 @@ class User implements \JsonSerializable
     public function getPassword(): string
     {
         return $this->password;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername(string $username): void
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @param bool $enabled
+     */
+    public function setEnabled(bool $enabled): void
+    {
+        $this->enabled = $enabled;
+    }
+
+    /**
+     * @param bool $isAdmin
+     */
+    public function setIsAdmin(bool $isAdmin): void
+    {
+        $this->isAdmin = $isAdmin;
     }
 
     /**
