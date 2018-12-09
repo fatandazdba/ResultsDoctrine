@@ -5,7 +5,7 @@
  *
  * @category Utils
  * @package  MiW\Results
- * @author   Javier Gil <franciscojavier.gil@upm.es>
+ * @author   Freddy Tandazo <freddy.tandazo.yanez@alumnos.upm.es>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     http://www.etsisi.upm.es ETS de Ingeniería de Sistemas Informáticos
  */
@@ -37,7 +37,11 @@ MARCA_FIN;
 
 $newResult    = (int) $argv[1];
 $userId       = (int) $argv[2];
-$newTimestamp = $argv[3] ?? new DateTime('now');
+try {
+    $newTimestamp = $argv[3] ?? new DateTime('now');
+} catch (Exception $e) {
+    echo $exception->getMessage();
+}
 
 /** @var User $user */
 $user = $entityManager

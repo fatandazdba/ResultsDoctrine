@@ -257,7 +257,15 @@ class User implements \JsonSerializable
      */
     public function __toString(): string
     {
-        return $this->username;
+        return sprintf(
+            '%3d - %3d - %22s - %10s - %10s - %50s',
+            $this->getId(),
+            $this->username,
+            $this->email,
+            $this->isEnabled(),
+            $this->isAdmin(),
+            $this->getPassword()
+        );
     }
 
     /**
